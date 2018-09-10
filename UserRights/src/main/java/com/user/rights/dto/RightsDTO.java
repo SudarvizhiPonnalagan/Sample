@@ -1,6 +1,8 @@
 package com.user.rights.dto;
 
-import com.user.rights.entity.Group;
+import com.user.rights.entity.Groups;
+
+import java.util.TreeSet;
 
 public class RightsDTO {
 
@@ -8,7 +10,7 @@ public class RightsDTO {
 
     private String name;
 
-    private Group group;
+    private TreeSet<Groups> groups = new TreeSet<>();
 
     public Long getId() {
         return id;
@@ -26,11 +28,11 @@ public class RightsDTO {
         this.name = name;
     }
 
-    public Group getGroup() {
-        return group;
+    public TreeSet<Groups> getGroups() {
+        return groups;
     }
 
-    public void setGroup(Group group) {
-        this.group = group;
+    public void setGroups(TreeSet<Groups> groups) {
+        this.groups = groups;
     }
 }

@@ -1,5 +1,6 @@
 com\user\rights\service\Impl\RightsServiceImpl$1.class
 com\user\rights\service\Impl\UserServiceImpl.class
+com\user\rights\entity\Groups.class
 com\user\rights\repository\UserRepository.class
 com\user\rights\service\Impl\UserServiceImpl$1.class
 com\user\rights\service\UserService.class
@@ -12,11 +13,10 @@ com\user\rights\service\Impl\GroupServiceImpl.class
 com\user\rights\entity\User.class
 com\user\rights\dto\UserDTO.class
 com\user\rights\UserRightsApi.class
-com\user\rights\dto\GroupDTO.class
 com\user\rights\controller\GroupController.class
-com\user\rights\entity\Group.class
 com\user\rights\controller\UserController.class
 com\user\rights\repository\RightsRepository.class
 com\user\rights\repository\GroupRepository.class
 com\user\rights\service\Impl\RightsServiceImpl.class
 com\user\rights\controller\RightsController.class
+com\user\rights\dto\GroupsDTO.class

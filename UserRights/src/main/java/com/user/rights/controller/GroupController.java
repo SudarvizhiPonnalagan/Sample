@@ -1,6 +1,6 @@
 package com.user.rights.controller;
 
-import com.user.rights.dto.GroupDTO;
+import com.user.rights.dto.GroupsDTO;
 import com.user.rights.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,12 +26,12 @@ public class GroupController {
     }
 
     @GetMapping("/getgroup")
-    public GroupDTO getGroup(@PathVariable("id") Long groupId){
+    public GroupsDTO getGroup(@PathVariable("id") Long groupId){
         return groupService.getGroup(groupId);
     }
 
     @GetMapping("/all")
-    public List<GroupDTO> getAllGroup() {
+    public List<GroupsDTO> getAllGroup() {
         return groupService.getAllGroups();
     }
 
@@ -44,12 +44,12 @@ public class GroupController {
     }
 
     @PostMapping(value = "/create")
-    public GroupDTO create(@RequestBody GroupDTO userDTO) {
+    public GroupsDTO create(@RequestBody GroupsDTO userDTO) {
         return groupService.create(userDTO);
     }
 
     @PutMapping(value = "/update")
-    public GroupDTO update(@RequestBody GroupDTO groupDTO) {
+    public GroupsDTO update(@RequestBody GroupsDTO groupDTO) {
         return groupService.update(groupDTO);
     }
 }

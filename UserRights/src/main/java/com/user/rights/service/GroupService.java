@@ -1,18 +1,18 @@
 package com.user.rights.service;
 
-import com.user.rights.dto.GroupDTO;
+import com.user.rights.dto.GroupsDTO;
 
 import java.util.List;
 
 public interface GroupService {
 
-    List<GroupDTO> getAllGroups();
+    List<GroupsDTO> getAllGroups();
 
-    GroupDTO getGroup(Long groupId);
+    GroupsDTO getGroup(Long groupId);
 
-    GroupDTO create(GroupDTO groupDTO);
+    GroupsDTO create(GroupsDTO groupDTO);
 
-    GroupDTO update(GroupDTO groupDTO);
+    GroupsDTO update(GroupsDTO groupDTO);
 
     Boolean delete(Long groupId);
 }

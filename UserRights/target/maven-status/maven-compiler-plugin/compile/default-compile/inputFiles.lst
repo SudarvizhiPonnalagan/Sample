@@ -2,15 +2,15 @@ E:\UserRights\src\main\java\com\user\rights\entity\Rights.java
 E:\UserRights\src\main\java\com\user\rights\service\GroupService.java
 E:\UserRights\src\main\java\com\user\rights\entity\User.java
 E:\UserRights\src\main\java\com\user\rights\controller\GroupController.java
-E:\UserRights\src\main\java\com\user\rights\dto\GroupDTO.java
 E:\UserRights\src\main\java\com\user\rights\repository\RightsRepository.java
 E:\UserRights\src\main\java\com\user\rights\controller\UserController.java
 E:\UserRights\src\main\java\com\user\rights\dto\UserDTO.java
+E:\UserRights\src\main\java\com\user\rights\dto\GroupsDTO.java
 E:\UserRights\src\main\java\com\user\rights\service\RightsService.java
 E:\UserRights\src\main\java\com\user\rights\service\Impl\UserServiceImpl.java
-E:\UserRights\src\main\java\com\user\rights\entity\Group.java
 E:\UserRights\src\main\java\com\user\rights\repository\GroupRepository.java
 E:\UserRights\src\main\java\com\user\rights\UserRightsApi.java
+E:\UserRights\src\main\java\com\user\rights\entity\Groups.java
 E:\UserRights\src\main\java\com\user\rights\service\Impl\RightsServiceImpl.java
 E:\UserRights\src\main\java\com\user\rights\controller\RightsController.java
 E:\UserRights\src\main\java\com\user\rights\service\UserService.java

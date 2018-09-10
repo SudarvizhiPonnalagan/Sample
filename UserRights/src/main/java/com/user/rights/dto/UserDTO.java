@@ -1,6 +1,6 @@
 package com.user.rights.dto;
 
-import com.user.rights.entity.Group;
+import com.user.rights.entity.Groups;
 import com.user.rights.entity.Rights;
 
 public class UserDTO {
@@ -9,7 +9,7 @@ public class UserDTO {
 
     private String name;
 
-    private Group group;
+    private Groups group;
 
     private Rights rights;
 
@@ -29,11 +29,11 @@ public class UserDTO {
         this.name = name;
     }
 
-    public Group getGroup() {
+    public Groups getGroup() {
         return group;
     }
 
-    public void setGroup(Group group) {
+    public void setGroup(Groups group) {
         this.group = group;
     }
 

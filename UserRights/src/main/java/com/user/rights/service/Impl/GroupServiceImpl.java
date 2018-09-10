@@ -3,8 +3,8 @@ package com.user.rights.service.Impl;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.user.rights.dto.GroupDTO;
-import com.user.rights.entity.Group;
+import com.user.rights.dto.GroupsDTO;
+import com.user.rights.entity.Groups;
 import com.user.rights.repository.GroupRepository;
 import com.user.rights.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,34 +30,34 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public List<GroupDTO> getAllGroups() {
-        return objectMapper.convertValue(groupRepository.findAll(), new TypeReference<List<GroupDTO>>(){});
+    public List<GroupsDTO> getAllGroups() {
+        return objectMapper.convertValue(groupRepository.findAll(), new TypeReference<List<GroupsDTO>>(){});
     }
 
     @Override
-    public GroupDTO getGroup(Long groupId) {
-        return objectMapper.convertValue(groupRepository.getOne(groupId), GroupDTO.class);
+    public GroupsDTO getGroup(Long groupId) {
+        return objectMapper.convertValue(groupRepository.getOne(groupId), GroupsDTO.class);
     }
 
     @Override
-    public GroupDTO create(GroupDTO groupDTO) {
-        Group group = objectMapper.convertValue(groupDTO, Group.class);
+    public GroupsDTO create(GroupsDTO groupDTO) {
+        Groups group = objectMapper.convertValue(groupDTO, Groups.class);
         if (group.getId() != null) {
             // throw new Exception("Create a new branch should not contain id");
         }
         setGroupDefaults(group);
-        return objectMapper.convertValue(groupRepository.save(group), GroupDTO.class);
+        return objectMapper.convertValue(groupRepository.save(group), GroupsDTO.class);
     }
 
     @Override
-    public GroupDTO update(GroupDTO groupDTO) {
-        Group group = objectMapper.convertValue(groupDTO, Group.class);
+    public GroupsDTO update(GroupsDTO groupDTO) {
+        Groups group = objectMapper.convertValue(groupDTO, Groups.class);
         if (group.getId() == null) {
             // TODO: Custom Exception should thrown
             // throw new Exception("Update an existing branch should contain id");
         }
         setGroupDefaults(group);
-        return objectMapper.convertValue(groupRepository.save(group), GroupDTO.class);
+        return objectMapper.convertValue(groupRepository.save(group), GroupsDTO.class);
     }
 
     @Override
@@ -66,13 +66,13 @@ public class GroupServiceImpl implements GroupService {
         return groupRepository.findById(groupId).isPresent();
     }
 
-    private void setGroupDefaults(Group group) {
+    private void setGroupDefaults(Groups group) {
         if (group.getId() == null) {
             //rights.setCreatedDate(new Date());
             // TODO: This default will be removed once admin_user services available
             // branch.setCreatedBy(1L);
             //} else if (branch.getCreatedDate() == null || branch.getCreatedBy() == null) {
-            Group tempGroup = groupRepository.getOne(group.getId());
+            Groups tempGroup = groupRepository.getOne(group.getId());
             //rights.setCreatedDate(tempRights.getCreatedDate());
             //rights.setCreatedBy(tempRights.getCreatedBy());
         }

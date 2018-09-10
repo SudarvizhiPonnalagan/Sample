@@ -1,15 +1,17 @@
 package com.user.rights.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "rights")
@@ -24,9 +26,15 @@ public class Rights {
     @Column(name = "name")
     private String name;
 
-    /*@OneToMany(fetch = FetchType.LAZY)
+
+    @JsonBackReference
+    @OneToMany(cascade=CascadeType.ALL, targetEntity=Groups.class)
+    private List<Groups> groups;
+
+  /*
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "group_id")
-    private Group group;*/
+    private Groups group;*/
 
     @Column(name = "description")
     private String description;
@@ -47,19 +55,19 @@ public class Rights {
         this.name = name;
     }
 
-   /* public Group getGroup() {
-        return group;
-    }
-
-    public void setGroup(Group group) {
-        this.group = group;
-    }
-*/
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<Groups> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<Groups> groups) {
+        this.groups = groups;
     }
 }
